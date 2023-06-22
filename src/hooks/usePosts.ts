@@ -8,8 +8,7 @@ export const usePosts = () => {
             alert(error.message)
         },
         select: ({data}):IPost[] => data.map(post => ({
-            ...post,
-            title: post.title + ' !'
+            ...post
         }))
     })
 

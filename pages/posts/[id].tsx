@@ -4,7 +4,6 @@ import styles from "../../styles/Home.module.css";
 import Image from "next/image";
 import {useRouter} from "next/router";
 import {usePost} from "../../src/hooks/usePost";
-import {IPost} from "../../types";
 
 
 
@@ -14,6 +13,10 @@ const Post: FC = () => {
 
     const {isLoading, post} = usePost(String(query?.id))
 
+
+    if (!post) {
+        return <div>Post not found</div>;
+    }
 
 
     return (
@@ -27,10 +30,10 @@ const Post: FC = () => {
 
 
                         <div className={styles.grid}>
-                                <div className={styles.card}>
-                                    <Image src={post.image} alt={post.title} width={200} height={200}/>
-                                    <p>ID: {post.id}</p>
-                                    <h2>{post.title}</h2>
+                                <div className={styles.div}>
+                                    <div className={styles.img}>
+                                        <Image className={styles.img__item} src={post.image} alt={post.title} width={200} height={200}/>
+                                    </div>
                                     <p>{post.body}</p>
                                 </div>
 

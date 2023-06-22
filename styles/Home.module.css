@@ -3,7 +3,6 @@
 }
 
 .main {
-  min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
   display: flex;
@@ -70,7 +69,6 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
 }
 
 .card {
@@ -82,7 +80,7 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  background-color: #111111;
 }
 
 .card:hover,
@@ -103,9 +101,37 @@
   line-height: 1.5;
 }
 
+.img {
+  display: block;
+  height: 480px;
+  margin-top: 30px;
+}
+.img__item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 480px;
+}
+
+.div {
+  width: 1200px;
+}
+
+.div p {
+  font-size: 24px;
+}
+
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.header__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 600px) {

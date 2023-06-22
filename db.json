@@ -1,21 +1,22 @@
 {
   "posts": [
-    {"id": 1, "title": "JavaScript",
-      "body": "smth",
-      "image": "/Javascript.png"
-    },
-    {"id": 2, "title": "Next JS",
-      "body": "lorem",
-      "image": "/next.svg"
-    },
-    {"id": 3, "title": "React",
-      "body": "123",
+    {
+      "id": 3,
+      "title": "React",
+      "body": "React — JavaScript-библиотека с открытым исходным кодом для разработки пользовательских интерфейсов. React разрабатывается и поддерживается Facebook, Instagram и сообществом отдельных разработчиков и корпораций. React может использоваться для разработки одностраничных и мобильных приложений. ",
       "image": "/React.png"
     },
-    {"id": 4, "title": "TypeScript",
-      "body": "idk",
+    {
+      "id": 4,
+      "title": "TypeScript",
+      "body": "TypeScript — язык программирования, представленный Microsoft в 2012 году и позиционируемый как средство разработки веб-приложений, расширяющее возможности JavaScript. Разработчиком языка TypeScript является Андерс Хейлсберг, создавший ранее Turbo Pascal, Delphi и C#.",
       "image": "/Typescript.png"
+    },
+    {
+      "title": "JavaScript",
+      "body": "Просто какой-то текст",
+      "image": "/Javascript.png",
+      "id": 5
     }
-
   ]
 }

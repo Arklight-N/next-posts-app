@@ -12,5 +12,8 @@ export const PostsService = {
     },
     async create(data: IPost) {
         return axios.post('/posts', data, {headers: {"Content-Type": 'application/json'}})
+    },
+    async deletePost(id: number) {
+        return axios.delete(`/posts/${id}`);
     }
 }
