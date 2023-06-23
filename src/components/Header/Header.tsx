@@ -20,7 +20,7 @@ const Header: FC = () => {
             </div>
             <div className={classes.header__content}>
                 {links.map(link => (
-                    <Link className={classes.header__link} href={link.path}>
+                    <Link key={link.id} className={classes.header__link} href={link.path}>
                         {link.title}
                     </Link>
                 ))}

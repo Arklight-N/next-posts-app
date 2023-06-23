@@ -9,7 +9,7 @@ const PostList: FC = ({posts}) => {
     return (
         <div>
             {posts.map((post) => (
-                <PostItem post={post}/>
+                <PostItem key={post.id} post={post}/>
             ))}
 
         </div>
