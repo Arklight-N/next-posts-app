@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import styles from "../../styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,12 +7,8 @@ import PostList from "../../src/components/Post/PostList/PostList";
 import {Button} from "@mui/material";
 import Popup from "../../src/components/Popup/Popup";
 import SendIcon from '@mui/icons-material/Send';
-import {useMutation} from "react-query";
-import {IPost} from "../../types";
-import {PostsService} from "../../src/services/posts.service";
 
-
-const PostsPage = () => {
+const PostsPage: FC = () => {
     const {isLoading, posts} = usePosts()
 
 
@@ -32,6 +28,7 @@ const PostsPage = () => {
     if (isLoading) {
         return <div>Loading...</div>;
     }
+
     return (
         <div className={styles.container}>
             <main className={styles.main}>
@@ -46,6 +43,7 @@ const PostsPage = () => {
                 {showPopup && <Popup onClose={closePopup}/>}
 
                 {isLoading ? <div>Loading...</div> : posts?.length ?
+                    // @ts-ignore
                     <PostList posts={posts}/> : <div>Elements not found</div>
                 }
 
