@@ -1,7 +1,7 @@
 import axios from "axios";
 import {IPost} from "../../types";
 
-const API_URL = 'https://next-posts-app-xvf7.vercel.app/'
+const API_URL = 'http://localhost:3004'
 axios.defaults.baseURL = API_URL
 export const PostsService = {
     async getAll() {
