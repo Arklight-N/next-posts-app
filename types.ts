@@ -11,3 +11,4 @@ export interface IComment {
     nickname: string
     text: string
 }
+

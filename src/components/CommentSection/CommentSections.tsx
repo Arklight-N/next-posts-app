@@ -10,7 +10,7 @@ type FormType = {
     text: string
 }
 
-const CommentSection = ({ id }: { id: string }) => {
+const CommentSection = ({ id }: { id: any }) => {
     // Получение комментариев с помощью React Query
     const { comments, isLoading } = useComment(id)
 

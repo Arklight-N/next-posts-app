@@ -1,15 +1,16 @@
+import {IPost} from "../../types";
 import {useQuery} from "react-query";
 import {PostsService} from "../services/posts.service";
-import {IPost} from "../../types";
 
 export const usePost = (id: string ) => {
-    const {isLoading, error, data:post} = useQuery(['posts list', id], () => PostsService.getById(id), {
-        onError: (error: any) =>{
+    // @ts-ignore
+    const { isLoading, error, data: post } = useQuery(['posts list', id], () => PostsService.getById(id), {
+        onError: (error: any) => {
             alert(error.message)
         },
-        select: ({data}):IPost[] => data,
+        select: ({ data }: { data: IPost }) => data, // Return a single IPost object instead of an array
         enabled: !!id
-    })
+    });
 
-    return {isLoading, post}
+    return { isLoading, error, post };
 }

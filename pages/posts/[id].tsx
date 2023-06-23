@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { usePost } from "../../src/hooks/usePost";
 import { useForm } from "react-hook-form";
-import { IComment } from "../../types";
+import {IComment, IPost} from "../../types";
 import CommentSection from "../../src/components/CommentSection/CommentSections";
 
-const Post: FC = () => {
+const Post: FC<IPost> = () => {
     const { query } = useRouter();
     const { isLoading, post } = usePost(String(query?.id));
     const id = query?.id;
@@ -22,6 +22,7 @@ const Post: FC = () => {
         return <div>Post not found</div>;
     }
 
+    // @ts-ignore
     return (
         <div className={styles.container}>
             {isLoading ? (
