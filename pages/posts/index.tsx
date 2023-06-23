@@ -3,7 +3,7 @@ import styles from "../../styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import {usePosts} from "../../src/hooks/usePosts";
-import PostList from "../../src/components/PostList/PostList";
+import PostList from "../../src/components/Post/PostList/PostList";
 import {Button} from "@mui/material";
 import Popup from "../../src/components/Popup/Popup";
 import SendIcon from '@mui/icons-material/Send';

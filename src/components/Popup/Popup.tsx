@@ -23,7 +23,7 @@ const Popup: FC<PopupProps> = ({onClose}) => {
 
 
 
-    const {isLoading, mutate} = useMutation('create post', (data: IPost) => PostsService.create(data), {
+    const {mutate} = useMutation('create post', (data: IPost) => PostsService.create(data), {
         onSuccess: () => {
             window.location.reload()
         },
@@ -40,12 +40,11 @@ const Popup: FC<PopupProps> = ({onClose}) => {
     }, handleSubmit} = useForm<FormType>()
 
 
-
-
     return (
         <div className={classes.overlay} onClick={onClose}>
             <div className={classes.popup} onClick={(event) => event.stopPropagation()}>
                 <form onSubmit={handleSubmit(mutate)}>
+
                     <label>
                         Заголовок поста:
                         <input {...register('title', {
@@ -70,12 +69,12 @@ const Popup: FC<PopupProps> = ({onClose}) => {
 
                     <div>{errors?.body && <p>{errors?.body?.message}</p>}</div>
                     <label>
-                        Картинка поста:
+                        Вставьте ссылку для картинки поста:
                         <input {...register('image', {
                             required: 'Это поле обязательно для заполнения',
                             minLength: {
                                 value: 3,
-                                message: 'Содержание не может быть менее 3 символов'
+                                message: 'Ссылка на картинку не может быть менее 3 символов'
                             }
                         })} onChange={e => setPostData({...postData, image: e.target.value})}/>
                     </label>

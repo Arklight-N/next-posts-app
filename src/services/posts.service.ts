@@ -15,5 +15,5 @@ export const PostsService = {
     },
     async deletePost(id: number) {
         return axios.delete(`/posts/${id}`);
-    }
+    },
 }
