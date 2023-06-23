@@ -39,10 +39,10 @@ const Popup: FC<PopupProps> = ({onClose}) => {
         errors
     }, handleSubmit} = useForm<FormType>()
 
-
     return (
         <div className={classes.overlay} onClick={onClose}>
             <div className={classes.popup} onClick={(event) => event.stopPropagation()}>
+                {/*@ts-ignore*/}
                 <form onSubmit={handleSubmit(mutate)}>
 
                     <label>
