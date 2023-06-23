@@ -7,7 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import {useMutation} from "react-query";
 import {PostsService} from "../../../services/posts.service";
 
-const PostItem = ({post}) => {
+const PostItem = ({post}: any) => {
 
 
 
